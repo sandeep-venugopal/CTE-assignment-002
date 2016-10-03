@@ -26,7 +26,7 @@ class UserNotification
     alert_message = options.fetch('alert_message', '')
     badge_count = options.fetch('badge_count', '')
     silent = options.fetch('silent', true)
-    silent ? @message = alert_message : @message = alert_message + badge_count
+    silent ? @message = alert_message : @message = "#{alert_message} #{badge_count}"
     @message_type = options.fetch('notification_type', '')
     @pop_up = options.fetch('silent', true)
   end
