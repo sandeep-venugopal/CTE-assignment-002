@@ -7,4 +7,13 @@ class Array
     array = dup # copy the existing array into new array
     MergeSort.sort(array)
   end
+
+  def my_map
+    return each unless block_given?
+    new_array = []
+    each_with_index do |element, index|
+      new_array[index] = yield(element)
+    end
+    new_array
+  end
 end
